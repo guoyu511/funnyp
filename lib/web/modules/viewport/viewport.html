@@ -1,33 +1,33 @@
-<div class="fixed sidebar-mini skin-green-light">
+<div ng-controller="ViewportCtrl as viewport">
     <div class="wrapper">
 
         <header class="main-header">
             <a href="/" class="logo">
+                <span class="logo-mini">
+                    <i class="fa fa-globe"></i>
+                </span>
                 <span class="logo-lg">
-                    <i class="fa fa-chrome" style="margin-right:6px"></i>
+                    <i class="fa fa-globe" style="margin-right:6px"></i>
                     DevProxy
                 </span>
             </a>
 
             <nav class="navbar navbar-static-top" role="navigation">
                 <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button"></a>
-
-                <div class="navbar-custom-menu">
-                    <ul class="nav navbar-nav">
-                        <li>
-                            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                        </li>
-                    </ul>
-                </div>
-
             </nav>
         </header>
         <aside class="main-sidebar">
             <section class="sidebar" style="height: auto;">
                 <ul class="sidebar-menu">
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-circle-o text-aqua"></i>
+                    <li ng-class="{active : viewport.$location.path() === '/ui/servers'}">
+                        <a href="/ui/servers">
+                            <i class="fa fa-server"></i>
+                            <span>Servers</span>
+                        </a>
+                    </li>
+                    <li ng-class="{active : viewport.$location.path() === '/ui/console'}">
+                        <a href="/ui/console">
+                            <i class="fa fa-file-text-o"></i>
                             <span>Console</span>
                         </a>
                     </li>
