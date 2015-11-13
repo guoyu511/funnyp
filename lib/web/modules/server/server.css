@@ -1,0 +1,17 @@
+.servers .box {
+}
+.servers .box-body hr {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.server {
+    position: relative;
+}
+.server .content{
+    top:50px;
+    bottom: 0px;
+    position: absolute;
+    width: 100%;
+}
+.server .box{
+}
