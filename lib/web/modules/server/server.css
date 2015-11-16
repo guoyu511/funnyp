@@ -4,14 +4,93 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
-.server {
+.inspector {
     position: relative;
 }
-.server .content{
+.inspector .row,
+.inspector .box{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+.inspector .nav-tabs-custom {
+    padding:0;
+}
+.inspector .content{
     top:50px;
     bottom: 0px;
     position: absolute;
     width: 100%;
+    padding-left: 0;
+    padding-right: 0;
 }
-.server .box{
+.inspector .box-body{
+    padding: 0;
+}
+.inspector .table {
+    table-layout:fixed;
+}
+.inspector .table td,
+.inspector .table th{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor:default;
+}
+.inspector .col-md-6:last-child {
+    padding-left:0;
+}
+.inspector .col-md-6,
+.inspector .col-md-12 {
+    height: 100%;
+}
+.inspector .table td div {
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.inspector .nav-tabs-custom {
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+.inspector .nav-tabs-custom .pull-right {
+    border : none;
+}
+.inspector .tab-content {
+    position:absolute;
+    top:44px;
+    bottom:0px;
+    width:100%;
+    box-sizing:border-box;;
+    padding:0;
+}
+.inspector .headers {
+    width: 100%;
+    height:100%;
+    padding:15px;
+    overflow: auto;
+}
+.inspector .headers p {
+    margin-bottom:3px;
+    word-break: break-all;
+    margin-left:10px;
+}
+.inspector .table-ct {
+    position: absolute;
+    top: 38px;
+    bottom: 0;
+    overflow: auto;
+}
+.inspector .col-method {
+    width : 60px;
+}
+.inspector .col-mimetype {
+    width : 200px;
+}
+.inspector .col-status {
+    width : 150px;
+}
+.inspector .col-latency {
+    width : 100px;
 }
