@@ -1,3 +1,4 @@
+
 .servers .box {
 }
 .servers .box-body hr {
@@ -37,11 +38,11 @@
     white-space: nowrap;
     cursor:default;
 }
-.inspector .col-md-6:last-child {
+.inspector .col-sm-6:last-child {
     padding-left:0;
 }
-.inspector .col-md-6,
-.inspector .col-md-12 {
+.inspector .col-sm-6,
+.inspector .col-sm-12 {
     height: 100%;
 }
 .inspector .table td div {

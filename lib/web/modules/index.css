@@ -6,8 +6,3 @@
 
 @import "viewport/viewport.css";
 @import "server/server.css";
-
-
-.breadcrumb .fa {
-    vertical-align: middle;
-}

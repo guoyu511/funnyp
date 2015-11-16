@@ -1,7 +1,7 @@
 <div class="content-wrapper inspector" ng-controller="InspectorCtrl as inspector">
     <section class="content container-fluid" ng-init="server=inspector.server">
         <div class="row">
-            <div ng-class="{'col-md-6':inspector.selected, 'col-md-12':!inspector.selected}">
+            <div ng-class="{'col-sm-6':inspector.selected, 'col-sm-12':!inspector.selected}">
                 <div class="nav-tabs-custom"
                      ng-init="inspector.tab1 = 'request'"
                      ng-class="{
@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6" ng-if="inspector.selected"
+            <div class="col-sm-6 hidden-xs" ng-if="inspector.selected"
                  ng-init="inspector.tab2 = 'header'">
                 <div class="nav-tabs-custom"
                      ng-class="{
@@ -132,7 +132,7 @@
                                         <b>{{key}}</b>: {{value}}
                                     </p>
                                 </li>
-                                <li class="list-group-item" ng-if="inspector.selected.statusCode">
+                                <li class="list-group-item" ng-if="inspector.selected.responseHeaders">
                                     <h4>Response Headers</h4>
                                     <p ng-repeat="(key, value) in inspector.selected.responseHeaders">
                                         <b>{{key}}</b>: {{value}}
