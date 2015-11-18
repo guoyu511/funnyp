@@ -1,0 +1,26 @@
+<div class="modal" ng-controller="FilterEditorCtrl as filterEditor">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Filter</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>URL 表达式</label>
+                        <input class="form-control" ng-model="filterEditor.filter">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" ng-click="filterEditor.finish()">
+                    <i class="fa fa-check"></i>
+                    OK
+                </button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="filterEditor.cancel()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

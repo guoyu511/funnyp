@@ -1,7 +1,7 @@
 <div class="content-wrapper" ng-controller="ServerListCtrl as list">
     <section class="content-header">
         <h1>
-            Servers
+            Dashboard
             <small>All valid proxy servers.</small>
         </h1>
         <ol class="breadcrumb">
@@ -12,12 +12,18 @@
         </ol>
     </section>
     <section class="content servers container-fluid">
+        <p>
+            <button class="btn btn-default" ng-click="list.create()">
+                <i class="fa fa-plus"></i>
+                Create Server
+            </button>
+        </p>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="server in list.servers">
                 <div class="box box-solid" ng-class="{'box-success' : server.status === 'running','box-default' : server.status === 'sleeping'}">
                     <div class="box-header">
                         <h3 class="box-title">
-                            {{server.name}}
+                            {{server.config.name}}
                         </h3>
                     </div>
                     <div class="box-body">

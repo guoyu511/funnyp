@@ -3,6 +3,7 @@
 @import "admin-lte/dist/css/AdminLte.min.css";
 @import "admin-lte/dist/css/skins/_all-skins.css";
 @import "font-awesome/css/font-awesome.min.css";
+@import "toastr/toastr.css";
 
 @import "viewport/viewport.css";
 @import "server/server.css";

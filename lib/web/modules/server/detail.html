@@ -1,0 +1,63 @@
+<div class="nav-tabs-custom"
+     ng-class="{
+                        'tab-success' : server.status === 'running',
+                        'tab-default' : server.status === 'sleeping'
+                        }">
+    <ul class="nav nav-tabs">
+        <li ng-class="{'active' : inspector.tab2 == 'header'}">
+            <a href="#" ng-click="inspector.tab2 = 'header'">Headers</a>
+        </li>
+        <li ng-class="{'active' : inspector.tab2 == 'preview'}">
+            <a href="#" ng-click="inspector.tab2 = 'preview'">Preview</a>
+        </li>
+        <li class="pull-right">
+            <a href="javascript:;" ng-click="inspector.selected = null">
+                <i class="fa fa-times"></i>
+            </a>
+        </li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane headers" ng-class="{'active' : inspector.tab2 == 'header'}">
+            <ul class="list-group list-group-unbordered">
+                <li class="list-group-item">
+                    <h4>General</h4>
+                    <p>
+                        <b>Remote Address</b>: {{inspector.selected.hostname}}
+                    </p>
+                    <p>
+                        <b>Request Url</b>: {{inspector.selected.url}}
+                    </p>
+                    <p>
+                        <b>Request Method</b>: {{inspector.selected.method}}
+                    </p>
+                    <p ng-if="inspector.selected.statusCode">
+                        <b>Status Code</b>:
+                        <i class="fa fa-circle" style="font-size:0.5em"
+                           ng-class="{
+                                            'text-success' : inspector.selected.statusCode >= 200 && inspector.selected.statusCode < 400,
+                                            'text-danger' : inspector.selected.statusCode >= 400
+                                            }"></i>
+                        {{inspector.selected.statusCode}}
+                        {{inspector.selected.statusMessage}}
+                    </p>
+                    <p ng-if="!inspector.selected.statusCode">
+                        <i class="fa fa-exclamation-triangle text-warning"></i>
+                        <span class="text-muted">Waiting for TTFB</span>
+                    </p>
+                </li>
+                <li class="list-group-item">
+                    <h4>Request Headers</h4>
+                    <p ng-repeat="(key, value) in inspector.selected.requestHeaders">
+                        <b>{{key}}</b>: {{value}}
+                    </p>
+                </li>
+                <li class="list-group-item" ng-if="inspector.selected.responseHeaders">
+                    <h4>Response Headers</h4>
+                    <p ng-repeat="(key, value) in inspector.selected.responseHeaders">
+                        <b>{{key}}</b>: {{value}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

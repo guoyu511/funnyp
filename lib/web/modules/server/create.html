@@ -1,0 +1,30 @@
+<div class="modal" ng-controller="ServerCreateCtrl as creator">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Create New Server</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label>Server Name</label>
+                        <input class="form-control" ng-model="creator.name">
+                    </div>
+                    <div class="form-group">
+                        <label>Bind Port</label>
+                        <input class="form-control" ng-model="creator.port" type="number">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" ng-click="creator.finish()">
+                    <i class="fa fa-check"></i>
+                    OK
+                </button>
+                <button type="button" class="btn btn-default btn-sm" ng-click="creator.cancel()">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

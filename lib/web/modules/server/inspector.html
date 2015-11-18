@@ -17,131 +17,32 @@
                             <a href="#"
                                ng-click="inspector.tab1 = 'setting';inspector.selected = null">Settings</a>
                         </li>
-                        <li class="pull-right">
-                            <a href="javascript:;" ng-click="server.start();" ng-if="server.status === 'sleeping'">
-                                <i class="fa fa-play-circle"></i>
-                                Start
+                        <li class="pull-right hidden-xs">
+                            <a href="javascript:;" ng-click="inspector.editFilter();" ng-class="{'text-success' : inspector.filter !== '.*'}">
+                                <i class="fa fa-filter"></i>
+                                Log Filter
                             </a>
-                            <a href="javascript:;" ng-click="server.stop();" ng-if="server.status === 'running'">
-                                <i class="fa fa-stop"></i>
-                                Stop
+                        </li>
+                        <li class="pull-right hidden-xs">
+                            <a href="javascript:;" ng-click="inspector.clear();">
+                                <i class="fa fa-eraser"></i>
+                                Clear Logs
                             </a>
                         </li>
                     </ul>
                     <div class="tab-content">
                         <div class="tab-pane" ng-class="{'active' : inspector.tab1 == 'request'}">
-                            <table class="table">
-                                <thead>
-                                <tr>
-                                    <th class="col-method">URL</th>
-                                    <th class="col-xs-12"></th>
-                                    <th class="col-status" ng-show="!inspector.selected">Status</th>
-                                    <th class="col-mimetype" ng-show="!inspector.selected">Content-Type</th>
-                                    <th class="col-latency" ng-show="!inspector.selected">Latency</th>
-                                </tr>
-                                </thead>
-                            </table>
-                            <div class="table-ct">
-                                <table class="table table-hover">
-                                    <tbody>
-                                    <tr ng-repeat="report in inspector.reports"
-                                        ng-click="inspector.selected = report"
-                                        ng-class="{'success' : report == inspector.selected}">
-                                        <td class="col-method">{{::report.method}}</td>
-                                        <td class="col-xs-12">
-                                            <div>{{::report.path}}</div>
-                                            <div class="text-muted">{{::report.hostname}}</div>
-                                        </td>
-                                        <td class="col-status" ng-show="!inspector.selected"
-                                            ng-class="{
-                                                'text-muted' : !report.statusCode,
-                                                'text-danger' : report.statusCode >= 400,
-                                                'text-warning' : report.statusCode >= 300 && report.statusCode < 400
-                                            }">
-                                            <div>{{report.statusCode}}</div>
-                                            <div class="text-muted">{{report.statusMessage || 'PENDING'}}</div>
-                                        </td>
-                                        <td class="col-mimetype" ng-show="!inspector.selected">
-                                            {{(report.responseHeaders['content-type'] || '').split(';')[0].trim()}}
-                                        </td>
-                                        <td class="col-latency" ng-show="!inspector.selected">{{report.latency}}</td>
-                                    </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                            <ng-include src="'modules/server/request.html'"></ng-include>
                         </div>
-                        <div class="tab-pane" ng-class="{'active' : inspector.tab1 == 'setting'}"></div>
+                        <div class="tab-pane setting" ng-class="{'active' : inspector.tab1 == 'setting'}">
+                            <ng-include src="'modules/server/setting.html'"></ng-include>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 hidden-xs" ng-if="inspector.selected"
                  ng-init="inspector.tab2 = 'header'">
-                <div class="nav-tabs-custom"
-                     ng-class="{
-                        'tab-success' : server.status === 'running',
-                        'tab-default' : server.status === 'sleeping'
-                        }">
-                    <ul class="nav nav-tabs">
-                        <li ng-class="{'active' : inspector.tab2 == 'header'}">
-                            <a href="#"
-                               ng-click="inspector.tab2 = 'header'">Headers</a>
-                        </li>
-                        <li ng-class="{'active' : inspector.tab2 == 'preview'}">
-                            <a href="#"
-                               ng-click="inspector.tab2 = 'preview';inspector.selected = null">Preview</a>
-                        </li>
-                        <li class="pull-right">
-                            <a href="javascript:;" ng-click="inspector.selected = null">
-                                <i class="fa fa-times"></i>
-                            </a>
-                        </li>
-                    </ul>
-                    <div class="tab-content">
-                        <div class="tab-pane headers" ng-class="{'active' : inspector.tab2 == 'header'}">
-                            <ul class="list-group list-group-unbordered">
-                                <li class="list-group-item">
-                                    <h4>General</h4>
-                                    <p>
-                                        <b>Address</b>: {{inspector.selected.hostname}}
-                                    </p>
-                                    <p>
-                                        <b>Request Url</b>: {{inspector.selected.url}}
-                                    </p>
-                                    <p>
-                                        <b>Request Method</b>: {{inspector.selected.method}}
-                                    </p>
-                                    <p ng-if="inspector.selected.statusCode">
-                                        <b>Status Code</b>:
-                                        <i class="fa fa-circle" style="font-size:0.5em"
-                                           ng-class="{
-                                            'text-success' : inspector.selected.statusCode >= 200 && inspector.selected.statusCode < 300,
-                                            'text-warning' : inspector.selected.statusCode >= 300 && inspector.selected.statusCode < 400,
-                                            'text-danger' : inspector.selected.statusCode >= 400
-                                            }"></i>
-                                        {{inspector.selected.statusCode}}
-                                        {{inspector.selected.statusMessage}}
-                                    </p>
-                                    <p ng-if="!inspector.selected.statusCode">
-                                        <i class="fa fa-exclamation-triangle text-warning"></i>
-                                        <span class="text-muted">Waiting for TTFB</span>
-                                    </p>
-                                </li>
-                                <li class="list-group-item">
-                                    <h4>Request Headers</h4>
-                                    <p ng-repeat="(key, value) in inspector.selected.requestHeaders">
-                                        <b>{{key}}</b>: {{value}}
-                                    </p>
-                                </li>
-                                <li class="list-group-item" ng-if="inspector.selected.responseHeaders">
-                                    <h4>Response Headers</h4>
-                                    <p ng-repeat="(key, value) in inspector.selected.responseHeaders">
-                                        <b>{{key}}</b>: {{value}}
-                                    </p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <ng-include src="'modules/server/detail.html'"></ng-include>
             </div>
         </div>
     </section>

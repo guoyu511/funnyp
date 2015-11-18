@@ -17,11 +17,26 @@
         <aside class="main-sidebar">
             <section class="sidebar" style="height: auto;">
                 <ul class="sidebar-menu">
-                    <li ng-class="{active : viewport.$location.path().indexOf('/ui/server') === 0}">
-                        <a href="/ui/server">
+                    <li class="treeview" ng-class="{active : viewport.$location.path().indexOf('/ui/server') === 0}">
+                        <a href="javascript:;">
                             <i class="fa fa-server"></i>
                             <span>Servers</span>
+                            <i class="fa fa-angle-left pull-right"></i>
                         </a>
+                        <ul class="treeview-menu">
+                            <li>
+                                <a href="/ui/server">
+                                    <i class="fa fa-circle-o"></i>
+                                    Dashboard
+                                </a>
+                            </li>
+                            <li ng-repeat="server in viewport.servers">
+                                <a href="/ui/server/{{server.id}}">
+                                    <i class="fa fa-circle-o"></i>
+                                    {{server.config.name}}
+                                </a>
+                            </li>
+                        </ul>
                     </li>
                     <li ng-class="{active : viewport.$location.path() === '/ui/console'}">
                         <a href="/ui/console">

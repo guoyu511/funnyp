@@ -1,4 +1,3 @@
-
 .servers .box {
 }
 .servers .box-body hr {
@@ -7,6 +6,12 @@
 }
 .inspector {
     position: relative;
+}
+.inspector .text-danger {
+    color:#f00000 !important;
+}
+.inspector .text-success {
+    color :#009926 !important;
 }
 .inspector .row,
 .inspector .box{
@@ -94,4 +99,35 @@
 }
 .inspector .col-latency {
     width : 100px;
+}
+.inspector .list-group-item:first-child {
+    padding-top:0;
+    border-top:none;
+}
+.inspector .setting-form {
+    width:100%;
+    padding: 40px 20px 0 20px;
+}
+.inspector .setting-form input{
+    max-width: 300px;
+}
+.inspector .setting-form table{
+    max-width: 800px;
+}
+.inspector .setting-form th:first-child{
+    width:100px;
+}
+.inspector .setting-form th:last-child{
+    width:120px;
+}
+.inspector .table.form-control {
+    display: table;
+    height: auto;
+}
+.inspector .tab-pane.setting{
+    overflow: auto;
+    height: 100%;
+}
+.rule-type {
+    width:136px;
 }
