@@ -1,4 +1,9 @@
-/**
- * Created by guoyu on 15/11/8.
- */
-require('./lib/startup')();
+#! /usr/bin/env node
+
+'use strict';
+
+var opt = require('node-getopt').create([
+        ['p', '=', 'Web UI bind port']
+    ]).bindHelp().parseSystem();
+
+require('./lib/startup')(opt['options']['p']);

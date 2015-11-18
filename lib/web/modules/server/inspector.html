@@ -11,7 +11,7 @@
                     <ul class="nav nav-tabs">
                         <li ng-class="{'active' : inspector.tab1 == 'request'}">
                             <a href="#"
-                               ng-click="inspector.tab1 = 'request'">Requests</a>
+                               ng-click="inspector.tab1 = 'request'">{{inspector.server.name}}</a>
                         </li>
                         <li ng-class="{'active' : inspector.tab1 == 'setting'}">
                             <a href="#"

@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git@gitlab.corp.daling.com:guoyu/devproxy.git"
   },
-  "author": "",
+  "author": "guoyu.511@gmail.com",
   "license": "ISC",
   "dependencies": {
     "admin-lte": "^2.3.2",
@@ -26,8 +26,13 @@
     "http-proxy": "^1.12.0",
     "jquery": "^2.1.4",
     "log4js": "^0.6.27",
+    "node-getopt": "^0.2.3",
     "node-uuid": "^1.4.3",
     "toastr": "^2.1.2"
+  },
+  "preferGlobal": true,
+  "bin": {
+    "devproxy": "index.js"
   },
   "publishConfig": {
     "registry": "http://npm-registry.corp.daling.com"
