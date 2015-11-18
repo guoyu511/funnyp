@@ -1,7 +1,7 @@
 {
-  "name": "devproxy",
+  "name": "funnyp",
   "version": "1.0.0",
-  "description": "A proxy tool for developers working on mulitple enviroment",
+  "description": "A proxy tool designed for devloper",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -32,7 +32,7 @@
   },
   "preferGlobal": true,
   "bin": {
-    "devproxy": "index.js"
+    "funnyp": "index.js"
   },
   "publishConfig": {
     "registry": "http://npm-registry.corp.daling.com"
