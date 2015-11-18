@@ -33,8 +33,5 @@
   "preferGlobal": true,
   "bin": {
     "funnyp": "index.js"
-  },
-  "publishConfig": {
-    "registry": "http://npm-registry.corp.daling.com"
   }
 }
