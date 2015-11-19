@@ -61,13 +61,9 @@
         <i class="fa fa-exclamation-triangle"></i> {{setting.error}}
     </p>
     <div class="form-group">
-        <button class="btn btn-default" ng-click="setting.server.start();" ng-if="setting.server.status === 'sleeping'">
+        <button class="btn btn-default" ng-click="setting.server.reload();" ng-if="setting.server.status === 'sleeping'">
             <i class="fa fa-play-circle"></i>
-            Start
-        </button>
-        <button class="btn btn-default" ng-click="setting.server.stop();" ng-if="setting.server.status === 'running'">
-            <i class="fa fa-stop"></i>
-            Stop
+            Reload
         </button>
     </div>
     <br/>
