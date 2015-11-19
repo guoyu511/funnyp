@@ -30,6 +30,9 @@
     "node-uuid": "^1.4.3",
     "toastr": "^2.1.2"
   },
+  "engines" : {
+    "node" : ">=4.0.0"
+  },
   "preferGlobal": true,
   "bin": {
     "funnyp": "index.js"
