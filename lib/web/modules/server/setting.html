@@ -40,6 +40,16 @@
                         <ng-include src="'modules/server/rules/' + rule.type + '/action.html'"></ng-include>
                     </td>
                     <td>
+                        <a href="javascript:;" ng-click="setting.moveUp(rule)"
+                           ng-if="$index != 0"
+                           class="btn btn-default btn-xs">
+                            <i class="fa fa-arrow-up"></i>
+                        </a>
+                        <a href="javascript:;" ng-click="setting.moveDown(rule)"
+                           ng-if="$index != setting.config.rules.length - 1"
+                           class="btn btn-default btn-xs">
+                            <i class="fa fa-arrow-down"></i>
+                        </a>
                         <a href="javascript:;" ng-click="setting.editRule(rule)" class="btn btn-default btn-xs">
                             <i class="fa fa-gear"></i>
                             Edit
