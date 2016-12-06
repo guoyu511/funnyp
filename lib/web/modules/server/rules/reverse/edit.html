@@ -1,4 +1,38 @@
 <div class="form-group">
     <label>Proxy Upstream</label>
     <input type="text" class="form-control" ng-model="editor.rule.upstream">
-</div>
+</div><!--
+<div class="form-group">
+    <label>Override Headers</label>
+    <div ng-init="editor.rule.headers = editor.rule.headers || []; editor.newHeader = {}">
+        <div class="form form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-xs-2">Name</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm" ng-model="editor.newHeader.name">
+                </div>
+                <label class="control-label col-xs-2">Value</label>
+                <div class=" col-xs-3">
+                    <input type="text" class="form-control input-sm" ng-model="editor.newHeader.value">
+                </div>
+                <div class="col-xs-2">
+                    <button class="btn btn-sm btn-success" ng-click="editor.rule.headers.push(editor.newHeader); editor.newHeader = {}">
+                        <i class="fa fa-plus"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="header in editor.rule.headers" class="form form-horizontal">
+            <div class="form-group">
+                <label class="control-label col-xs-2">Name</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm" ng-model="header.name">
+                </div>
+                <label class="control-label col-xs-2">Value</label>
+                <div class="col-xs-3">
+                    <input type="text" class="form-control input-sm" ng-model="header.value">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>-->
