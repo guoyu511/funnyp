@@ -131,3 +131,12 @@
 .rule-type {
     width:136px;
 }
+
+.inspector .preview {
+    border: 1px solid #eee;
+    color: #666;
+    width: 100%;
+    height: calc(100% - 10px);
+    box-sizing: border-box;
+    margin: 0;
+}

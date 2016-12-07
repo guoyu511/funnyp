@@ -23,9 +23,10 @@
     "express-urlrewrite": "^1.2.0",
     "express-ws": "^0.2.6",
     "font-awesome": "^4.4.0",
+    "fs-extra": "^1.0.0",
     "jquery": "^2.1.4",
     "log4js": "^0.6.27",
-    "mime-types": "^2.1.7",
+    "mime-types": "^2.1.13",
     "node-getopt": "^0.2.3",
     "node-uuid": "^1.4.3",
     "toastr": "^2.1.2"

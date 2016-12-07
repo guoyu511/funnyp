@@ -7,7 +7,8 @@
         <li ng-class="{'active' : inspector.tab2 == 'header'}">
             <a href="#" ng-click="inspector.tab2 = 'header'">Headers</a>
         </li>
-        <li ng-class="{'active' : inspector.tab2 == 'preview'}">
+        <li ng-class="{'active' : inspector.tab2 == 'preview'}"
+            ng-if="inspector.selected.responseCapture">
             <a href="#" ng-click="inspector.tab2 = 'preview'">Preview</a>
         </li>
         <li class="pull-right">
@@ -21,6 +22,9 @@
             <ul class="list-group list-group-unbordered">
                 <li class="list-group-item">
                     <h4>General</h4>
+                    <p>
+                        <b>Track ID</b>: {{inspector.selected.id}}
+                    </p>
                     <p>
                         <b>Remote Address</b>: {{inspector.selected.hostname}}
                     </p>
@@ -48,16 +52,23 @@
                 <li class="list-group-item">
                     <h4>Request Headers</h4>
                     <p ng-repeat="(key, value) in inspector.selected.requestHeaders">
-                        <b>{{key}}</b>: {{value}}
+                        <b style="text-transform: capitalize;">{{key}}</b>: {{value}}
                     </p>
                 </li>
                 <li class="list-group-item" ng-if="inspector.selected.responseHeaders">
                     <h4>Response Headers</h4>
                     <p ng-repeat="(key, value) in inspector.selected.responseHeaders">
-                        <b>{{key}}</b>: {{value}}
+                        <b style="text-transform: capitalize;">{{key}}</b>: {{value}}
                     </p>
                 </li>
             </ul>
+        </div>
+        <div class="tab-pane headers"
+             ng-if="inspector.selected.responseCapture"
+             ng-class="{'active' : inspector.tab2 == 'preview'}">
+            <iframe class="preview"
+                ng-if="inspector.checkPreview()"
+                ng-src="{{'/capture/response/' + inspector.selected.id}}"></iframe>
         </div>
     </div>
 </div>
