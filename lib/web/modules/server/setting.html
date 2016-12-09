@@ -10,6 +10,12 @@
                ng-model="setting.config.port">
     </div>
     <div class="form-group">
+        <label class="checkbox-inline">
+            <input type="checkbox" ng-model="setting.config.https">
+            Decrypt HTTPS Traffic
+        </label>
+    </div>
+    <div class="form-group">
         <label>Rules</label>
         <p>
             <a class="btn btn-default btn-xs" ng-click="setting.addRule()">
