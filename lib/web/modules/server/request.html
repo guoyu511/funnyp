@@ -12,10 +12,15 @@
 <div class="table-ct">
     <table class="table table-hover">
         <tbody>
-        <tr ng-repeat="report in inspector.reports"
-            ng-click="inspector.selected = report"
+        <tr ng-repeat="report in inspector.reports track by report.id"
+            ng-click="inspector.selected = report; inspector.tab2 = 'header'"
             ng-class="{'success' : report == inspector.selected}">
-            <td class="col-method">{{::report.method}}</td>
+            <td class="col-secure">
+                <i class="fa fa-lock" ng-if="report.secure"></i>
+            </td>
+            <td class="col-method">
+                {{::report.method}}
+            </td>
             <td class="col-xs-12">
                 <div>{{::report.path}}</div>
                 <div class="text-muted">{{::report.requestHeaders.host}}</div>

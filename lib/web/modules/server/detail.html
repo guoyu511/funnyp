@@ -8,8 +8,8 @@
             <a href="#" ng-click="inspector.tab2 = 'header'">Headers</a>
         </li>
         <li ng-class="{'active' : inspector.tab2 == 'preview'}"
-            ng-if="inspector.selected.responseCapture">
-            <a href="#" ng-click="inspector.tab2 = 'preview'">Preview</a>
+            ng-if="inspector.checkPreview()">
+            <a href="#" ng-click="inspector.tab2 = 'preview'">Response Preview</a>
         </li>
         <li class="pull-right">
             <a href="javascript:;" ng-click="inspector.selected = null">
@@ -66,9 +66,18 @@
         <div class="tab-pane headers"
              ng-if="inspector.selected.responseCapture"
              ng-class="{'active' : inspector.tab2 == 'preview'}">
-            <iframe class="preview"
-                ng-if="inspector.checkPreview()"
-                ng-src="{{'/capture/response/' + inspector.selected.id}}"></iframe>
+            <div class="preview"
+                 ng-if="inspector.checkPreview(['text', 'xml', 'javascript'])">
+                <div ng-init="inspector.previewAsText()" ng-bind="inspector.capture"></div>
+            </div>
+            <div class="preview"
+                 ng-if="inspector.checkPreview(['json'])">
+                <div ng-init="inspector.previewAsJson()" ng-bind="inspector.capture"></div>
+            </div>
+            <div class="preview"
+                 ng-if="inspector.checkPreview(['image'])">
+                <img ng-src="/capture/response/{{inspector.selected.id}}">
+            </div>
         </div>
     </div>
 </div>

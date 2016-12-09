@@ -88,8 +88,12 @@
     bottom: 0;
     overflow: auto;
 }
+.inspector .col-secure {
+    width : 30px;
+    color: #666;
+}
 .inspector .col-method {
-    width : 60px;
+    width : 75px;
 }
 .inspector .col-mimetype {
     width : 200px;
