@@ -14,9 +14,9 @@
   "license": "ISC",
   "dependencies": {
     "admin-lte": "^2.3.2",
-    "angular": "^1.4.7",
-    "angular-route": "^1.4.7",
-    "angular-sanitize": "^1.6.0",
+    "angular": "1.4.0",
+    "angular-route": "1.4.0",
+    "angular-sanitize": "1.4.0",
     "body-parser": "^1.14.1",
     "browserify-middleware": "^7.0.0",
     "cssify": "^0.8.0",
