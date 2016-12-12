@@ -115,14 +115,23 @@
 .inspector .setting-form input{
     max-width: 300px;
 }
-.inspector .setting-form table{
+.inspector table.rules-table {
     max-width: 800px;
 }
-.inspector .setting-form th:first-child{
+.inspector .rules-table th:first-child{
     width:100px;
 }
-.inspector .setting-form th:last-child{
+.inspector .rules-table th:last-child{
     width:180px;
+}
+.inspector table.https-table {
+    max-width: 600px;
+}
+.inspector .https-table th:first-child{
+    width:400px;
+}
+.inspector .https-table th:last-child{
+    width:100px;
 }
 .inspector .table.form-control {
     display: table;
