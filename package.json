@@ -31,6 +31,7 @@
     "node-easy-cert": "^1.0.1",
     "node-getopt": "^0.2.3",
     "node-uuid": "^1.4.3",
+    "server-destroy": "^1.0.1",
     "toastr": "^2.1.2",
     "underscore": "^1.8.3"
   },
