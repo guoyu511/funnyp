@@ -18,12 +18,13 @@
             <td class="col-secure">
                 <i class="fa fa-lock" ng-if="report.secure"></i>
             </td>
-            <td class="col-method">
+            <td class="col-method" ng-class="{'text-muted' : report.method == 'CONNECT'}">
                 {{::report.method}}
             </td>
             <td class="col-xs-12">
-                <div>{{::report.path}}</div>
-                <div class="text-muted">{{::report.requestHeaders.host}}</div>
+                <div ng-if="report.method != 'CONNECT'">{{::report.path}}</div>
+                <div class="text-muted" ng-if="report.method != 'CONNECT'">{{::report.requestHeaders.host}}</div>
+                <div class="text-muted" ng-if="report.method == 'CONNECT'">{{::report.hostname}}</div>
             </td>
             <td class="col-status" ng-show="!inspector.selected"
                 ng-class="{
@@ -31,7 +32,7 @@
                     'text-danger' : report.statusCode >= 400
                 }">
                 <div>{{report.statusCode}}</div>
-                <div class="text-muted">{{report.statusMessage || 'PENDING'}}</div>
+                <div class="text-muted" ng-if="report.method != 'CONNECT'">{{report.statusMessage || 'PENDING'}}</div>
             </td>
             <td class="col-mimetype" ng-show="!inspector.selected">
                 {{(report.responseHeaders['content-type'] || '').split(';')[0].trim()}}
