@@ -1,6 +1,6 @@
 {
   "name": "funnyp",
-  "version": "2.1.9",
+  "version": "2.1.10",
   "description": "A proxy tool designed for devloper",
   "main": "index.js",
   "scripts": {
