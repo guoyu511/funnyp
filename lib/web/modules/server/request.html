@@ -31,7 +31,7 @@
                     'text-muted' : !report.statusCode,
                     'text-danger' : report.statusCode >= 400
                 }">
-                <div>{{::report.statusCode}}</div>
+                <div>{{report.statusCode}}</div>
                 <div class="text-muted" ng-if="::report.method != 'CONNECT'">{{report.statusMessage || 'PENDING'}}</div>
             </td>
             <td class="col-mimetype" ng-show="!inspector.selected">
