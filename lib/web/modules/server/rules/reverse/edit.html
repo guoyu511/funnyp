@@ -1,7 +1,56 @@
-<div class="form-group">
+<div class="form-group" >
     <label>Proxy Upstream</label>
     <input type="text" class="form-control" ng-model="editor.rule.upstream">
-</div><!--
+</div>
+<div class="form-group">
+    <label>
+        <input type="checkbox" ng-model="editor.rule.override">
+        Override Request Headers
+    </label>
+</div>
+<div class="form-group">
+    <div class="form-inline" ng-if="editor.rule.override"
+         ng-init="editor.inputHeaderName = ''; editor.inputHeaderValue = ''">
+        <div class="form-group">
+            <input type="text" class="form-control input-sm" placeholder="Name"
+                   style="width: 128px;"
+                   ng-model="editor.inputHeaderName">
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control input-sm" placeholder="Value"
+                   style="width: 358px;"
+                   ng-model="editor.inputHeaderValue">
+        </div>
+        <div class="form-group">
+            <button class="btn btn-default btn-sm"
+                ng-click="editor.rule.headers.unshift({
+                    'name' : editor.inputHeaderName,
+                    'value' : editor.inputHeaderValue
+                });
+                editor.inputHeaderName = editor.inputHeaderValue = '';">
+                <i class="fa fa-plus"></i>
+                Override
+            </button>
+        </div>
+    </div>
+</div>
+<table ng-if="editor.rule.override" class="table table-bordered"
+       ng-init="editor.rule.headers = editor.rule.headers || []">
+    <tbody style="max-height: 100px;overflow: auto;">
+        <tr ng-repeat="header in editor.rule.headers">
+            <td style="width: 128px">{{header.name}}</td>
+            <td style="width: 408px">{{header.value}}</td>
+            <td>
+                <button class="btn btn-default btn-xs"
+                    ng-click="editor.rule.headers.splice(editor.rule.headers.indexOf(header) , 1)">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<!--
 <div class="form-group">
     <label>Override Headers</label>
     <div ng-init="editor.rule.headers = editor.rule.headers || []; editor.newHeader = {}">
