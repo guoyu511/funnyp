@@ -1,4 +1,4 @@
-<table class="table">
+<table class="table request-table" ng-class="{'selected' : !!inspector.selected}">
     <thead>
     <tr>
         <th class="col-method">URL</th>
@@ -10,7 +10,7 @@
     </thead>
 </table>
 <div class="table-ct">
-    <table class="table table-hover">
+    <table class="table table-hover request-table" ng-class="{'selected' : !!inspector.selected}">
         <tbody>
         <tr ng-repeat="report in inspector.reports track by report.id"
             ng-click="inspector.selected = report; inspector.tab2 = 'header'"
@@ -26,7 +26,7 @@
                 <div class="text-muted" ng-if="::report.method != 'CONNECT'">{{::report.requestHeaders.host}}</div>
                 <div class="text-muted" ng-if="::report.method == 'CONNECT'">{{::report.hostname}}</div>
             </td>
-            <td class="col-status" ng-show="!inspector.selected"
+            <td class="col-status"
                 ng-class="{
                     'text-muted' : !report.statusCode,
                     'text-danger' : report.statusCode >= 400
@@ -34,10 +34,10 @@
                 <div>{{report.statusCode}}</div>
                 <div class="text-muted" ng-if="::report.method != 'CONNECT'">{{report.statusMessage || 'PENDING'}}</div>
             </td>
-            <td class="col-mimetype" ng-show="!inspector.selected">
+            <td class="col-mimetype">
                 {{(report.responseHeaders['content-type'] || '').split(';')[0].trim()}}
             </td>
-            <td class="col-latency" ng-show="!inspector.selected">{{report.latency}}</td>
+            <td class="col-latency">{{report.latency}}</td>
         </tr>
         </tbody>
     </table>

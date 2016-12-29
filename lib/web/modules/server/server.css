@@ -141,6 +141,11 @@
     overflow: auto;
     height: 100%;
 }
+.inspector .request-table.selected .col-status,
+.inspector .request-table.selected .col-mimetype,
+.inspector .request-table.selected .col-latency {
+    display: none;
+}
 .rule-type {
     width:136px;
 }
