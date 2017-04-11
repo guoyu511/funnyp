@@ -1,3 +1,5 @@
 .idea/*
 servers/*
 node_modules
+docs/_site
+docs/.sass-cache
