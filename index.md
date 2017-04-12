@@ -8,14 +8,29 @@
 [node-image]: https://img.shields.io/badge/node->=4.0.0-brightgreen.svg
 [node-url]: http://nodejs.org/download/
 
-```
-npm install -g funnyp
-funnyp -p 9000
-```
-Open brower with es6 support, chrome or safari etc.
+Funny Proxy (funnyp) is a http proxy tool for developers to setup their development / debug environment.
+
+## Features
+
+* Fully configurable for capture and modify http/https requests.
+* Web UI for inspect requests in real-time.
+* Zero-configuration installation.
+* Works on Linux & MacOSx & Windows.
+
+[![NPM](https://nodei.co/npm/funnyp.png?downloads=true&downloadRank=true)](https://nodei.co/npm/funnyp/)
+
+## Getting Started
+
+**NodeJS**
+
+Download and install nodejs from [https://nodejs.org](https://nodejs.org)
+
+**Install funnyp** (require sudo for install global)
+
+    npm install -g funnyp
+
+**Launch proxy server**
 
 ```
-http://127.0.0.1:9000
+funnyp -p 18000
 ```
-
-Have fun!
