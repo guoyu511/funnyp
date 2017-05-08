@@ -1,4 +1,4 @@
-<div class="form-group" >
+<div class="form-group">
     <label>Proxy Upstream</label>
     <input type="text" class="form-control" ng-model="editor.rule.upstream">
 </div>
@@ -23,7 +23,7 @@
         </div>
         <div class="form-group">
             <button class="btn btn-default btn-sm"
-                ng-click="editor.rule.headers.unshift({
+                    ng-click="editor.rule.headers.unshift({
                     'name' : editor.inputHeaderName,
                     'value' : editor.inputHeaderValue
                 });
@@ -37,16 +37,16 @@
 <table ng-if="editor.rule.override" class="table table-bordered"
        ng-init="editor.rule.headers = editor.rule.headers || []">
     <tbody style="max-height: 100px;overflow: auto;">
-        <tr ng-repeat="header in editor.rule.headers">
-            <td style="width: 128px">{{header.name}}</td>
-            <td style="width: 408px">{{header.value}}</td>
-            <td>
-                <button class="btn btn-default btn-xs"
+    <tr ng-repeat="header in editor.rule.headers">
+        <td style="width: 128px">{{header.name}}</td>
+        <td style="width: 408px">{{header.value}}</td>
+        <td>
+            <button class="btn btn-default btn-xs"
                     ng-click="editor.rule.headers.splice(editor.rule.headers.indexOf(header) , 1)">
-                    <i class="fa fa-trash"></i>
-                </button>
-            </td>
-        </tr>
+                <i class="fa fa-trash"></i>
+            </button>
+        </td>
+    </tr>
     </tbody>
 </table>
 

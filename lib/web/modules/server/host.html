@@ -1,5 +1,5 @@
 <div class="modal" ng-controller="HostEditorCtrl as editor"
-    ng-init="editor.port = 443">
+     ng-init="editor.port = 443">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -10,7 +10,7 @@
                     <div class="form-group">
                         <label>Host</label>
                         <input type="text" class="form-control" ng-model="editor.name"
-                            placeholder="eg: www.google.com">
+                               placeholder="eg: www.google.com">
                     </div>
                     <div class="form-group">
                         <label>Port</label>
@@ -20,7 +20,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-success btn-sm" ng-click="editor.finish()"
-                    ng-disabled="!editor.name || !editor.port">
+                        ng-disabled="!editor.name || !editor.port">
                     <i class="fa fa-check"></i>
                     OK
                 </button>

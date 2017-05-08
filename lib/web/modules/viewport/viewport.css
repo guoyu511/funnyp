@@ -1,11 +1,12 @@
 @media (max-width: 767px) {
     .main-header .navbar-static-top {
-        background:none;
-        position:absolute;
-        top:0;
+        background: none;
+        position: absolute;
+        top: 0;
     }
+
     .fixed .content-wrapper {
-        padding-top:50px;
+        padding-top: 50px;
     }
 }
 

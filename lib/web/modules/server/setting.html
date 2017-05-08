@@ -2,7 +2,7 @@
     <div class="form-group">
         <label>Server Name</label>
         <input type="text" class="form-control" placeholder="Type server name"
-                ng-model="setting.config.name">
+               ng-model="setting.config.name">
     </div>
     <div class="form-group">
         <label>Bind Port</label>
@@ -58,47 +58,47 @@
         </p>
         <table class="table table-bordered form-control rules-table">
             <thead>
-                <tr>
-                    <th>
-                        Type
-                    </th>
-                    <th>
-                        URL Pattern
-                    </th>
-                    <th>
-                        Action
-                    </th>
-                    <th></th>
-                </tr>
+            <tr>
+                <th>
+                    Type
+                </th>
+                <th>
+                    URL Pattern
+                </th>
+                <th>
+                    Action
+                </th>
+                <th></th>
+            </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="rule in setting.config.rules">
-                    <td>{{rule.type}}</td>
-                    <td>{{rule.regexp}}</td>
-                    <td>
-                        <ng-include src="'modules/server/rules/' + rule.type + '/action.html'"></ng-include>
-                    </td>
-                    <td>
-                        <a href="javascript:;" ng-click="setting.moveUpRule(rule)"
-                           ng-if="$index != 0"
-                           class="btn btn-default btn-xs">
-                            <i class="fa fa-arrow-up"></i>
-                        </a>
-                        <a href="javascript:;" ng-click="setting.moveDownRule(rule)"
-                           ng-if="$index != setting.config.rules.length - 1"
-                           class="btn btn-default btn-xs">
-                            <i class="fa fa-arrow-down"></i>
-                        </a>
-                        <a href="javascript:;" ng-click="setting.editRule(rule)" class="btn btn-default btn-xs">
-                            <i class="fa fa-gear"></i>
-                            Edit
-                        </a>
-                        <a href="javascript:;" ng-click="setting.deleteRule(rule)" class="btn btn-default btn-xs">
-                            <i class="fa fa-trash-o"></i>
-                            Delete
-                        </a>
-                    </td>
-                </tr>
+            <tr ng-repeat="rule in setting.config.rules">
+                <td>{{rule.type}}</td>
+                <td>{{rule.regexp}}</td>
+                <td>
+                    <ng-include src="'modules/server/rules/' + rule.type + '/action.html'"></ng-include>
+                </td>
+                <td>
+                    <a href="javascript:;" ng-click="setting.moveUpRule(rule)"
+                       ng-if="$index != 0"
+                       class="btn btn-default btn-xs">
+                        <i class="fa fa-arrow-up"></i>
+                    </a>
+                    <a href="javascript:;" ng-click="setting.moveDownRule(rule)"
+                       ng-if="$index != setting.config.rules.length - 1"
+                       class="btn btn-default btn-xs">
+                        <i class="fa fa-arrow-down"></i>
+                    </a>
+                    <a href="javascript:;" ng-click="setting.editRule(rule)" class="btn btn-default btn-xs">
+                        <i class="fa fa-gear"></i>
+                        Edit
+                    </a>
+                    <a href="javascript:;" ng-click="setting.deleteRule(rule)" class="btn btn-default btn-xs">
+                        <i class="fa fa-trash-o"></i>
+                        Delete
+                    </a>
+                </td>
+            </tr>
             </tbody>
         </table>
     </div>

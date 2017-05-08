@@ -20,7 +20,8 @@
         </p>
         <div class="row">
             <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" ng-repeat="server in list.servers">
-                <div class="box box-solid" ng-class="{'box-success' : server.status === 'running','box-default' : server.status === 'sleeping'}">
+                <div class="box box-solid"
+                     ng-class="{'box-success' : server.status === 'running','box-default' : server.status === 'sleeping'}">
                     <div class="box-header">
                         <h3 class="box-title">
                             {{server.config.name}}
@@ -53,7 +54,8 @@
                                 Reload
                             </button>
                             <div class="pull-right" style="margin-top: 1px;">
-                                <span class="pull-right badge bg-green" ng-if="server.status === 'running'">Running</span>
+                                <span class="pull-right badge bg-green"
+                                      ng-if="server.status === 'running'">Running</span>
                                 <span class="pull-right badge" ng-if="server.status === 'sleeping'">Stopped</span>
                             </div>
                             <div class="overlay" ng-if="server.isLoading">
