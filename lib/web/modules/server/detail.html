@@ -53,13 +53,13 @@
                         <span class="text-muted">Waiting for TTFB</span>
                     </p>
                 </li>
-                <li class="list-group-item">
+                <li class="list-group-item" ng-if="inspector.hasAnyHeader(inspector.selected.requestHeaders)">
                     <h4>Request Headers</h4>
                     <p ng-repeat="(key, value) in inspector.selected.requestHeaders">
                         <b style="text-transform: capitalize;">{{key}}</b>: {{value}}
                     </p>
                 </li>
-                <li class="list-group-item" ng-if="inspector.selected.responseHeaders">
+                <li class="list-group-item" ng-if="inspector.hasAnyHeader(inspector.selected.responseHeaders)">
                     <h4>Response Headers</h4>
                     <p ng-repeat="(key, value) in inspector.selected.responseHeaders">
                         <b style="text-transform: capitalize;">{{key}}</b>: {{value}}

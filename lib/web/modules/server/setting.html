@@ -21,8 +21,12 @@
                 <i class="fa fa-plus"></i>
                 Add Host
             </a>
+            <a class="btn btn-default btn-xs" href="/funnyp.crt" target="_blank">
+                <i class="fa fa fa-download"></i>
+                Trust Root Certificate
+            </a>
         </p>
-        <table class="table table-bordered form-control https-table">
+        <table class="table table-bordered form-control https-table" ng-if="setting.config.httpsHosts.length > 0">
             <thead>
             <tr>
                 <th>
@@ -56,7 +60,7 @@
                 Add Rule
             </a>
         </p>
-        <table class="table table-bordered form-control rules-table">
+        <table class="table table-bordered form-control rules-table" ng-if="setting.config.rules.length > 0">
             <thead>
             <tr>
                 <th>
