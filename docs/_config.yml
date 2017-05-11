@@ -5,7 +5,7 @@ permalink:           pretty
 
 # Setup
 title:               Funny Proxy
-tagline:             'funnyp'
+tagline:             ''
 description:         'funnyp is a web debugging proxy for developers. <br>Made by <a href="https://github.com/guoyu511" target="_blank">guoyu511</a>.'
 url:                 https://github.com/guoyu511/funnyp
 baseurl:             ''

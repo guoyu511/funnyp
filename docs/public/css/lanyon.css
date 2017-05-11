@@ -51,13 +51,14 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -.025rem;
 }
 * {
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: "Hiragino Sans GB",Helvetica,Arial,sans-serif;
+  font-size:16px;
 }
 p, li {
   font-weight:300;
 }
 strong {
-  font-weight:500;
+  font-weight:600;
 }
 
 

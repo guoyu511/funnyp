@@ -26,7 +26,7 @@ Download and install nodejs from [https://nodejs.org](https://nodejs.org)
 
 **Install funnyp**
 
-_require sudo for install as global command_
+require `sudo` for install as global command
 
     npm install -g funnyp
 
@@ -41,7 +41,7 @@ You can open the browser and visit `http://(your_ip_address):8888` to check if s
 
 If there is any proxy server exists, they will also be started.
 
-> Funnyp use WebSocket to inspect requests in real time, so you need a browser which supported it.
+Notice that funnyp use WebSocket to inspect requests in real time, so you need a browser which supported it.
 
 ## Server Management
 
