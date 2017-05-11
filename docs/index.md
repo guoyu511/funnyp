@@ -57,11 +57,11 @@ After that the new server will be created. Now you can inspect the requests by c
 
 You can inpsect each request pass by the proxy server. The following informations are included:
 
-* url
-* method
-* status code & status message
+* request url
+* request method
 * request headers
 * request content (available for limited mime-types)
+* response status code & status message
 * response headers
 * response content (available for limited mime-types)
 
@@ -78,7 +78,15 @@ Configured rules are orderd and chained. One request can match **at most** one r
 
 `Direct Rule` is the simplest proxy rule. It just pass requests to their requested resource directly without any modification. It is also the default behavior when there is no rules matched for request.
 
-//TODO
+To create a direct proxy rule, you simply click `Add Rule` button and select the `direct` option, then type the `regexp` as your expect url. 
+
+Th `regexp` could be any valid expression. For example:
+
+`http://foo.bar/(.*)` will match all request sent to foo.bar with http protocol
+
+`http://foo.bar/items/(.*)` will match all request sent to foo.bar with http protocol which path start with /items
+
+`(http|https)://foo.bar/(.*)` will match all request sent to foo.bar with http protocol or https protocol
 
 **Redirect**
 
@@ -103,20 +111,3 @@ Configured rules are orderd and chained. One request can match **at most** one r
 * Map response content as local file.
 * Download captured request / response file.
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-###

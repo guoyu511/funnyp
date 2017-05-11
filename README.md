@@ -6,7 +6,7 @@
 
 _funnyp_ is a web debugging proxy for developers. You can setup all your proxy servers with differenct group of  proxy rules within single instance.
 
-**Features**
+## Features
 
 * Fully configurable for capture and modify http/https requests.
 * Multiple proxy servers within single process.
@@ -14,6 +14,22 @@ _funnyp_ is a web debugging proxy for developers. You can setup all your proxy s
 * Zero-configuration installation.
 * Works on any system environment.
 
-**How to use**
+## Getting Started
+
+**Install NodeJS**
+
+Download and install nodejs from [https://nodejs.org](https://nodejs.org)
+
+**Install funnyp**
+
+require `sudo` for install as global command
+
+    npm install -g funnyp
+
+**Launch server**
+
+```
+funnyp -p 8888
+```
 
 Read [http://funnyp.guoyu511.me](http://funnyp.guoyu511.me) for more information.
