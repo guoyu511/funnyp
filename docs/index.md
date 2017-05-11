@@ -74,13 +74,13 @@ Each proxy server may contains several different type of proxy rules. You can co
 
 Configured rules are orderd and chained. One request can match **at most** one rule. If there is a rule matched for request, then the matching process will break immediatly.
 
-**Direct Rule**
+#### Direct Rule
 
 `Direct Rule` is the simplest proxy rule. It just pass requests to their requested resource directly without any modification. It is also the default behavior when there is no rules matched for request.
 
-To create a direct proxy rule, you simply click `Add Rule` button and select the `direct` option, then type the `regexp` as your expect url. 
+To create a `direct rule`, you simply click `Add Rule` button and select the `direct` option, then type the `regexp` as expect url to match. 
 
-Th `regexp` could be any valid expression. For example:
+The `regexp` could be any valid regular expression. For example:
 
 `http://foo.bar/(.*)` will match all request sent to foo.bar with http protocol
 
@@ -88,19 +88,23 @@ Th `regexp` could be any valid expression. For example:
 
 `(http|https)://foo.bar/(.*)` will match all request sent to foo.bar with http protocol or https protocol
 
-**Redirect**
+#### Redirect
+
+`Redirect Rule` is used to redirect requests to specified locations.
+
+To create a redirect rule, yo click `Add Rule` button and select the `redirect` option, then type the `regexp` as expect url to match and the `Redirect location` as the url to redirect to.
+
+The `regexp` could be any valid regular expression as discussed above.
+
+The `Redirect location` could be any valid url location or an 
+
+#### Revert Proxy
 
 //TODO
 
 
 
-**Revert Proxy**
-
-//TODO
-
-
-
-### Decrypt HTTPS Traffic
+#### Decrypt HTTPS Traffic
 
 //TODO
 
