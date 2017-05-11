@@ -1,0 +1,24 @@
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+
+# Setup
+title:               Funny Proxy
+tagline:             'funnyp'
+description:         'funnyp is a web debugging proxy for developers. <br>Made by <a href="https://github.com/guoyu511" target="_blank">guoyu511</a>.'
+url:                 https://github.com/guoyu511/funnyp
+baseurl:             ''
+#paginate:            5
+
+# About/contact
+author:
+  name:              Guo Yu
+  url:               http://guoyu511.me
+  email:             guoyu.511@gmail.com
+
+# Custom vars
+version:             2.1
+
+github:
+  repo:              https://github.com/guoyu511/funnyp
