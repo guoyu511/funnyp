@@ -13,3 +13,7 @@
 .breadcrumb .fa {
     vertical-align: middle;
 }
+
+.content-wrapper {
+    position: relative;
+}

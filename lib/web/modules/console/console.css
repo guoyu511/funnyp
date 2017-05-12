@@ -1,0 +1,15 @@
+.web-console {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border:1px solid #ccc;
+}
+.web-console-ct {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background: #fff;
+    overflow: auto;
+}

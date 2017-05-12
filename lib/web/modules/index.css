@@ -5,4 +5,5 @@
 @import "font-awesome/css/font-awesome.min.css";
 @import "toastr/toastr.css";
 @import "viewport/viewport.css";
+@import "console/console.css";
 @import "server/server.css";

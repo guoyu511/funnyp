@@ -28,7 +28,7 @@
     "font-awesome": "4.4.0",
     "fs-extra": "1.0.0",
     "jquery": "2.1.4",
-    "log4js": "0.6.27",
+    "log4js": "1.1.1",
     "mime-types": "2.1.13",
     "node-easy-cert": "1.0.1",
     "node-getopt": "0.2.3",
