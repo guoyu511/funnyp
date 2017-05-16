@@ -570,3 +570,22 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+.fork-me {
+  top: 0;
+  right: 0;
+  border: 0;
+}
+
+.fork-me {
+  width: 8rem;
+  height: 8rem;
+  position: absolute;
+}
+@media (min-width: 56em) {
+  .fork-me {
+    width: 10rem;
+    height: 10rem;
+    position: fixed;
+  }
+}
