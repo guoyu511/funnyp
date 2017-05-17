@@ -154,6 +154,7 @@ Then you will see the requests in the inspector and all features for http server
 
 ## Coming Soon
 
+* Network throttling
 * Inspect WebSocket messages.
 * More configurable and flexible rules.
 * Map response content as local file.
