@@ -23,7 +23,7 @@
             </td>
             <td class="col-xs-12">
                 <div ng-if="::report.method != 'CONNECT'">{{::report.path}}</div>
-                <div class="text-muted">{{::report.requestHeaders.host}}</div>
+                <div class="text-muted">{{::report.url}}</div>
             </td>
             <td class="col-status"
                 ng-class="{
