@@ -8,11 +8,11 @@
             <a href="#" ng-click="inspector.tab2 = 'header'">Headers</a>
         </li>
         <li ng-class="{'active' : inspector.tab2 == 'preview-req'}"
-            ng-if="inspector.checkPreview(inspector.selected.requestHeaders)">
+            ng-if="inspector.selected.requestCaptured">
             <a href="#" ng-click="inspector.tab2 = 'preview-req'">Request Preview</a>
         </li>
         <li ng-class="{'active' : inspector.tab2 == 'preview-res'}"
-            ng-if="inspector.checkPreview(inspector.selected.responseHeaders)">
+            ng-if="inspector.selected.responseCaptured">
             <a href="#" ng-click="inspector.tab2 = 'preview-res'">Response Preview</a>
         </li>
         <li class="pull-right">
@@ -68,35 +68,17 @@
             </ul>
         </div>
         <div class="tab-pane headers"
-             ng-if="inspector.selected.requestCapture"
+             ng-if="inspector.selected.requestCaptured"
              ng-class="{'active' : inspector.tab2 == 'preview-req'}">
-            <div class="preview"
-                 ng-if="inspector.checkPreview(inspector.selected.requestHeaders, ['text', 'xml', 'javascript', 'x-www-form-urlencoded'])">
-                <div ng-init="inspector.requestAsText()" ng-bind="inspector.requestPreview"></div>
-            </div>
-            <div class="preview"
-                 ng-if="inspector.checkPreview(inspector.selected.requestHeaders, ['json'])">
-                <div ng-init="inspector.requestAsJson()" ng-bind="inspector.requestPreview"></div>
-            </div>
-            <div class="preview"
-                 ng-if="inspector.checkPreview(inspector.selected.requestHeaders, ['image'])">
-                <img ng-src="/capture/request/{{inspector.selected.id}}">
+            <div class="preview">
+                <iframe ng-src="{{'/capture/request/' + server.id + '/' + inspector.selected.id | trustAsResourceUrl}}"></iframe>
             </div>
         </div>
         <div class="tab-pane headers"
-             ng-if="inspector.selected.responseCapture"
+             ng-if="inspector.selected.responseCaptured"
              ng-class="{'active' : inspector.tab2 == 'preview-res'}">
-            <div class="preview"
-                 ng-if="inspector.checkPreview(inspector.selected.responseHeaders, ['text', 'xml', 'javascript', 'x-www-form-urlencoded'])">
-                <div ng-init="inspector.responseAsText()" ng-bind="inspector.responsePreview"></div>
-            </div>
-            <div class="preview"
-                 ng-if="inspector.checkPreview(inspector.selected.responseHeaders, ['json'])">
-                <div ng-init="inspector.responseAsJson()" ng-bind="inspector.responsePreview"></div>
-            </div>
-            <div class="preview"
-                 ng-if="inspector.checkPreview(inspector.selected.responseHeaders, ['image'])">
-                <img ng-src="/capture/response/{{inspector.selected.id}}">
+            <div class="preview">
+                <iframe ng-src="{{'/capture/response/' + server.id + '/' + inspector.selected.id | trustAsResourceUrl}}"></iframe>
             </div>
         </div>
     </div>
