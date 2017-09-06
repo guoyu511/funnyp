@@ -106,7 +106,7 @@ It will match all request sent to foo.bar which path start with `/items`
 
 `Redirect rule` is used to redirect requests to specified locations.
 
-To create a redirect rule, yo click `Add Rule` button and select the `redirect` option, then type the `regex` as expect url to match and the `Redirect location` as the url to redirect to.
+To create a redirect rule, click `Add Rule` button and select the `redirect` option, then type the `regex` as expect url to match and the `Redirect location` as the url to redirect to.
 
 The `regexp` could be any valid regular expression as discussed above.
 
@@ -126,7 +126,7 @@ It will match all requests sent to foo.bar with any path and send a redirect res
 
 `Reverse proxy rule` is a powerful tool for development. It handle requests and pass requests to the upstream server. The process of request forwarding is transparent for client. This allows you to easily export your own http services as a specific domain name. For example, make all request to `www.google.com` point to your own server and port.
 
-To create a reverse proxy rule, yo click `Add Rule` button and select the `reverse proxy` option, then type the `regex` as expect url to match and the `upstream` as the url to request to the upstream server.
+To create a reverse proxy rule, click `Add Rule` button and select the `reverse proxy` option, then type the `regex` as expect url to match and the `upstream` as the url to request to the upstream server.
 
 Here are some examples:
 
@@ -146,7 +146,7 @@ Since the HTTPs requests are encrypted, to capture those requests, you need to t
 
 ![root certificate](images/root_certificate.png)
 
-After trust the certificate, you can add the host which you want to decrypt requests on:
+After trust the certificate, add the host which you want to decrypt requests on:
 
 ![add https host](images/add_https_host.png)
 
