@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Introduce &middot; Funny Proxy
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body>
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>funnyp is a web debugging proxy for developers. <br>Made by <a href="https://github.com/guoyu511" target="_blank">guoyu511</a>.</p>
+  </div>
+
+  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+    
+
+    <a class="sidebar-nav-item" href="https://www.npmjs.com/package/funnyp" target="_blank">NPM package</a>
+    <a class="sidebar-nav-item" href="https://github.com/guoyu511/funnyp" target="_blank">GitHub project</a>
+    <span class="sidebar-nav-item">Currently v2.1</span>
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2017. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Funny Proxy</a>
+            <small></small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <p><em>funnyp</em> is a web debugging proxy for developers. You can setup all your proxy servers with differenct group of  proxy rules within single instance.</p>
+
+<p><a href="https://npmjs.org/package/funnyp"><img src="https://img.shields.io/npm/v/npm.svg?style=flat-square" alt="NPM Version" /></a>
+<a href="http://nodejs.org/download/"><img src="https://img.shields.io/badge/node-&gt;=4.0.0-brightgreen.svg?style=flat-square" alt="node Version" /></a></p>
+
+<p><strong>Features</strong></p>
+
+<ul>
+  <li>Fully configurable for capture and modify http/https requests.</li>
+  <li>Multiple proxy servers within single process.</li>
+  <li>Web console for inspect requests in real-time.</li>
+  <li>Zero-configuration installation.</li>
+  <li>Works on any system environment.</li>
+</ul>
+
+<h2 id="getting-started">Getting Started</h2>
+
+<p><strong>Install NodeJS</strong></p>
+
+<p>Download and install nodejs from <a href="https://nodejs.org">https://nodejs.org</a></p>
+
+<p><strong>Install funnyp</strong></p>
+
+<p>require <code class="highlighter-rouge">sudo</code> for install as global command</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>npm install -g funnyp
+</code></pre>
+</div>
+
+<p><strong>Launch server</strong></p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>funnyp -p 8888
+</code></pre>
+</div>
+
+<p>Through this command, the web console will be started and listening on the specific port.
+You can open the browser and visit <code class="highlighter-rouge">http://(your_ip_address):8888</code> to check if start successfully.</p>
+
+<p>If there is any proxy server exists, they will also be started.</p>
+
+<p>Notice that funnyp use WebSocket to inspect requests in real time, so you need a browser which supported it.</p>
+
+<h2 id="using-funnyp">Using funnyp</h2>
+
+<h3 id="server-management">Server Management</h3>
+
+<p><strong>Create a new server</strong></p>
+
+<p>You can create a new proxy server by click the <code class="highlighter-rouge">Create Server</code> button on the dashboard page and input the server name and server port. Notice that the created proxy server should use <strong>different</strong> port with the web console.</p>
+
+<p>After that the new server will be created. Now you can inspect the requests by click <code class="highlighter-rouge">inspect</code> button. By setting your client (web browser, mobile phone, etc) to using this address and port as http proxy, you will see the incoming requests on the request list table.</p>
+
+<p><img src="images/request_table.png" alt="requests" /></p>
+
+<p><strong>Delete server</strong></p>
+
+<p>To delete a existing server, you should switch to <code class="highlighter-rouge">setting</code> tab and click <code class="highlighter-rouge">Delete</code> button. Be careful, this operation cannot be undo.</p>
+
+<h3 id="inspect-requests">Inspect Requests</h3>
+
+<p>You can inpsect each request pass by the proxy server. The following informations are included:</p>
+
+<ul>
+  <li>request url</li>
+  <li>request method</li>
+  <li>request headers</li>
+  <li>request content (available for limited mime-types)</li>
+  <li>response status code &amp; status message</li>
+  <li>response headers</li>
+  <li>response content (available for limited mime-types)</li>
+</ul>
+
+<p><img src="images/inspect_request.png" alt="inspect request" /></p>
+
+<h3 id="proxy-rules">Proxy Rules</h3>
+
+<p>Each proxy server may contains several different type of proxy rules. You can configure your rules according to your needs by swith to <code class="highlighter-rouge">settings</code> tab and click <code class="highlighter-rouge">Add Rule</code> button.</p>
+
+<p>Configured rules are orderd and chained. One request can match <strong>at most</strong> one rule. If there is a rule matched for request, then the matching process will break immediatly.</p>
+
+<h4 id="direct-rule">Direct Rule</h4>
+
+<p><code class="highlighter-rouge">Direct rule</code> is the simplest proxy rule. It just pass requests to their requested resource directly without any modification. It is also the default behavior when there is no rules matched for request.</p>
+
+<p>To create a <code class="highlighter-rouge">direct rule</code>, you simply click <code class="highlighter-rouge">Add Rule</code> button and select the <code class="highlighter-rouge">direct</code> option, then type the <code class="highlighter-rouge">regex</code> as expect url to match.</p>
+
+<p>The <code class="highlighter-rouge">regex</code> could be any valid regular expression.</p>
+
+<p>Here are some examples:</p>
+
+<p><code class="highlighter-rouge">http://foo.bar/(.*)</code> as regex:</p>
+
+<p>It will match all request sent to foo.bar over <code class="highlighter-rouge">http</code> protocol</p>
+
+<p><code class="highlighter-rouge">(http|https)://foo.bar/(.*)</code> as regex:</p>
+
+<p>It will match all request sent to foo.bar over <code class="highlighter-rouge">http</code> or <code class="highlighter-rouge">https</code> protocol</p>
+
+<p><code class="highlighter-rouge">http://foo.bar/items/(.*)</code> as regex:</p>
+
+<p>It will match all request sent to foo.bar which path start with <code class="highlighter-rouge">/items</code></p>
+
+<h4 id="redirect-rule">Redirect Rule</h4>
+
+<p><code class="highlighter-rouge">Redirect rule</code> is used to redirect requests to specified locations.</p>
+
+<p>To create a redirect rule, yo click <code class="highlighter-rouge">Add Rule</code> button and select the <code class="highlighter-rouge">redirect</code> option, then type the <code class="highlighter-rouge">regex</code> as expect url to match and the <code class="highlighter-rouge">Redirect location</code> as the url to redirect to.</p>
+
+<p>The <code class="highlighter-rouge">regexp</code> could be any valid regular expression as discussed above.</p>
+
+<p>The <code class="highlighter-rouge">Redirect location</code> could be any valid url location or an valid replacement string for regex.</p>
+
+<p>Here are some examples:</p>
+
+<p><code class="highlighter-rouge">http://foo.bar</code> as regex and <code class="highlighter-rouge">http://foo.bar/index.html</code> as location:</p>
+
+<p>It will match all requests sent to foo.bar and send a redirect response to the client with location http://foo.bar/index.html</p>
+
+<p><code class="highlighter-rouge">http://foo.net/(.*)</code> as regex and <code class="highlighter-rouge">http://foo.com/$1</code> as location:</p>
+
+<p>It will match all requests sent to foo.bar with any path and send a redirect response to the client with the replaced location.For example, <code class="highlighter-rouge">http://foo.net/items</code> will redirect to <code class="highlighter-rouge">http://foo.com/items</code> and <code class="highlighter-rouge">http://foo.net/product?id=123</code> will redirect to <code class="highlighter-rouge">http://foo.com/product?id=123</code>, etc.</p>
+
+<h4 id="reverse-proxy-rule">Reverse Proxy Rule</h4>
+
+<p><code class="highlighter-rouge">Reverse proxy rule</code> is a powerful tool for development. It handle requests and pass requests to the upstream server. The process of request forwarding is transparent for client. This allows you to easily export your own http services as a specific domain name. For example, make all request to <code class="highlighter-rouge">www.google.com</code> point to your own server and port.</p>
+
+<p>To create a reverse proxy rule, yo click <code class="highlighter-rouge">Add Rule</code> button and select the <code class="highlighter-rouge">reverse proxy</code> option, then type the <code class="highlighter-rouge">regex</code> as expect url to match and the <code class="highlighter-rouge">upstream</code> as the url to request to the upstream server.</p>
+
+<p>Here are some examples:</p>
+
+<p><code class="highlighter-rouge">http://foo.bar</code> as regex and <code class="highlighter-rouge">http://foo.bar/index.html</code> as upstream:</p>
+
+<p>It will match all requests sent to foo.bar. Then the proxy server will make a new request which headers are equals to the incoming request and pipe the request  body to the upstream server with url <code class="highlighter-rouge">http://foo.bar/index.html</code>.  When the proxy server receive the response from upstream server, it then write this response headers and body to the client.</p>
+
+<p><code class="highlighter-rouge">http://foo.bar/(.*)</code> as regex and <code class="highlighter-rouge">http://192.168.1.1:8080/$1</code> as upstream:</p>
+
+<p>It will match all requests sent to <code class="highlighter-rouge">foo.bar</code>. Then the proxy server will make a new request which headers are equals to the incoming request and pipe the request body to the upstream server with replaced url. For example, <code class="highlighter-rouge">http://foo.bar/items</code> will be replaced to <code class="highlighter-rouge">http://192.168.1.1:8080/items</code> and <code class="highlighter-rouge">http://foo.bar/product?id=123</code> will be replaced to <code class="highlighter-rouge">http://192.168.1.1:8080/product?id=123</code>, etc. When the proxy server receive the response from upstream server, it then write this response headers and body to the client.</p>
+
+<h3 id="decrypt-https-traffic">Decrypt HTTPS Traffic</h3>
+
+<p>By default, funnyp does not capture HTTPs traffic. It simply handle the <code class="highlighter-rouge">CONNECT</code> request and setup the tunnel between client and request server.</p>
+
+<p>Since the HTTPs requests are encrypted, to capture those requests, you need to trust the <code class="highlighter-rouge">Root Certificate</code> of funnyp. Download the <code class="highlighter-rouge">crt</code> file and install this file on your device.</p>
+
+<p><img src="images/root_certificate.png" alt="root certificate" /></p>
+
+<p>After trust the certificate, you can add the host which you want to decrypt requests on:</p>
+
+<p><img src="images/add_https_host.png" alt="add https host" /></p>
+
+<p>Then you will see the requests in the inspector and all features for http server like <code class="highlighter-rouge">redirect</code> and <code class="highlighter-rouge">reverse proxy</code> are available now for this host.</p>
+
+<h2 id="coming-soon">Coming Soon</h2>
+
+<ul>
+  <li>Inspect WebSocket messages.</li>
+  <li>More configurable and flexible rules.</li>
+  <li>Map response content as local file.</li>
+  <li>Download captured request / response as file.</li>
+</ul>
+
+
+      </div>
+    </div>
+
+    <a href="https://github.com/guoyu511/funnyp">
+      <img class="fork-me" src="https://camo.githubusercontent.com/e7bbb0521b397edbd5fe43e7f760759336b5e05f/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_green_007200.png">
+    </a>
+
+    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+    <script>
+      (function(document) {
+        var toggle = document.querySelector('.sidebar-toggle');
+        var sidebar = document.querySelector('#sidebar');
+        var checkbox = document.querySelector('#sidebar-checkbox');
+
+        document.addEventListener('click', function(e) {
+          var target = e.target;
+
+          if(!checkbox.checked ||
+             sidebar.contains(target) ||
+             (target === checkbox || target === toggle)) return;
+
+          checkbox.checked = false;
+        }, false);
+      })(document);
+    </script>
+  </body>
+</html>
